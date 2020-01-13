@@ -1,1 +1,3 @@
-import ArcProgressBar from './ArcProgressBar'
+import {ArcProgressBar} from './ArcProgressBar'
+
+export default ArcProgressBar

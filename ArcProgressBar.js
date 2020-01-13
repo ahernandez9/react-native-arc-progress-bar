@@ -27,21 +27,20 @@ class ArcProgressBar extends Component {
     render() {
         const {
             rectangularSize, strokeWidth,
-            arcAmplitude, showMinMax,
-            showLegend1, showLegend2,
-            absoluteMaxValue, minMoneyValue,
-            lowerValue, stackedValue,
-            maxValue, showCursor,
-            onChange, cursorStyle,
             containerStyle, progressStyle,
-            legend1Style, legend2Style,
-            legend1Text, legend2Text,
-            legend1NumberStyle, legend2NumberStyle,
+            minMaxStyle, captionStyle,
+            cursorStyle, onChange,
+            maxStyle, minStyle,
+            maxNumberStyle, minNumberStyle,
+            showMinMax, showCursor,
+            showMax, showMin,
+            absoluteMaxValue, lowerValue,
+            stackedValue, maxValue,
+            caption1Text, caption2Text,
             primaryColor, shadowColor,
-            minMaxStyle, legendStyle
         } = this.props;
 
-        const minMoney = minMoneyValue;
+        const minMoney = 0;
         const maxMoney = absoluteMaxValue;
 
         const {PI, cos, sin} = Math;
@@ -165,25 +164,25 @@ class ArcProgressBar extends Component {
             <View style={[styles.container, containerStyle]}>
 
                 {/* Advanced | available */}
-                <View style={[styles.advancedAvailableView, legendStyle]}>
-                    {showLegend1 &&
-                    <Text style={[{color: shadowColor}, legend1Style]}>
+                <View style={[styles.advancedAvailableView, captionStyle]}>
+                    {showMax &&
+                    <Text style={[{color: shadowColor}, maxStyle]}>
                         <Text style={{fontSize: 11}}>
-                            {legend1Text}
+                            {caption1Text}
                         </Text>
-                        <Text style={legend1NumberStyle}>
+                        <Text style={maxNumberStyle}>
                             {maxValue}
                         </Text>
                     </Text>
                     }
 
-                    {showLegend2 &&
-                    <Text style={[{color: primaryColor}, legend2Style]}>
-                        <Text style={legend2NumberStyle}>
+                    {showMin &&
+                    <Text style={[{color: primaryColor}, minStyle]}>
+                        <Text style={minNumberStyle}>
                             {lowerValue}
                         </Text>
                         <Text style={{fontSize: 11}}>
-                            {legend2Text}
+                            {caption2Text}
                         </Text>
                     </Text>
                     }
@@ -248,14 +247,23 @@ class ArcProgressBar extends Component {
     }
 }
 
+ArcProgressBar.defaultProps = {
+    strokeWidth: 30,
+    showMinMax: false,
+    showCursor: true,
+    showMin: false,
+    showMax: false,
+    primaryColor: '#047FF9',
+    shadowColor: '#bfdefd',
+};
+
 ArcProgressBar.propTypes = {
     rectangularSize:        PropTypes.number.isRequired,
     absoluteMaxValue:       PropTypes.number.isRequired,
     maxValue:               PropTypes.number.isRequired,
     lowerValue:             PropTypes.number.isRequired,
-    stackedValue:           PropTypes.number.isRequired,
-    showCursor:             PropTypes.bool.isRequired,
-    onChange:               PropTypes.func.isRequired
+    higherValue:            PropTypes.number.isRequired,
+    stackedValue:           PropTypes.number.isRequired
 };
 
 const { width } = Dimensions.get("window");
