@@ -1,0 +1,32 @@
+{
+  "name": "react-native-arc-progress-bar",
+  "version": "1.0.0",
+  "description": "Customizable progress arc bar with an animated cursor to modify the amount progressed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahernandez9/react-native-arc-progress-bar.git"
+  },
+  "keywords": [
+    "react-native",
+    "progress-arc",
+    "progress-bar.",
+    "arc-progress",
+    "progress",
+    "arc",
+    "react-native-arc-progress",
+    "react-native-progress-arc",
+    "react",
+    "native",
+    "react-native-progress-bar"
+  ],
+  "author": "ahernandez9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahernandez9/react-native-arc-progress-bar/issues"
+  },
+  "homepage": "https://github.com/ahernandez9/react-native-arc-progress-bar#readme"
+}
