@@ -4,7 +4,7 @@ This project is in continuous development, and new functionalities will be consi
 
 Behaviour is consistent in both Android and iOS.
 
-![Alt Text](https://gfycat.com/baggybigeyelashpitviper.gif)
+[![ezgif.com-crop5a80f8b0da1dab2d.gif](https://s5.gifyu.com/images/ezgif.com-crop5a80f8b0da1dab2d.gif)](https://gifyu.com/image/mYqU)
 
 
 ## Features
