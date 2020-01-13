@@ -55,20 +55,6 @@ class Example extends Component {
     }
 }
 ```
-
-rectangularSize, strokeWidth, 
-containerStyle, progressStyle,
-minMaxStyle, captionStyle,
-cursorStyle, onChange,
-maxStyle, minStyle,
-maxNumberStyle, minNumberStyle,
-showMinMax, showCursor,
-showMax, showMin,
-absoluteMaxValue,
-lowerValue, stackedValue,
-maxValue,
-caption1Text, legend2Text,
-primaryColor, shadowColor,
             
 ## Properties
 
@@ -96,7 +82,7 @@ primaryColor, shadowColor,
  maxText           | Text for inner upper caption                  |   String | -
  minText           | Text for inner lower caption                  |   String | -
  primaryColor      | Color for animated bar                        |   Hex color | #047FF9
- shadowColor       | Color for the shadow of the animated bar      |   Hex color | #bfdefd
+ shadowColor       | Color for the shadow of the animated bar      |   Hex color | #BFDEFD
  onChange          | Callback with new cursor value (args: value)  | Function | -
 
 
