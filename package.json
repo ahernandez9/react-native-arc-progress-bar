@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahernandez9/react-native-arc-progress-bar.git"
+    "url": "git://github.com/ahernandez9/react-native-arc-progress-bar.git"
   },
   "keywords": [
     "react-native",
@@ -28,5 +28,15 @@
   "bugs": {
     "url": "https://github.com/ahernandez9/react-native-arc-progress-bar/issues"
   },
-  "homepage": "https://github.com/ahernandez9/react-native-arc-progress-bar#readme"
+  "homepage": "https://github.com/ahernandez9/react-native-arc-progress-bar#readme",
+
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "prop-types": "15.6.2",
+    "react-native-reanimated": "1.4.0",
+    "react-native-svg": "9.13.3"
+  }
 }
