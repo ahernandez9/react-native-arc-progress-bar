@@ -1,6 +1,6 @@
 {
   "name": "react-native-arc-progress-bar",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Customizable progress arc bar with an animated cursor to modify the amount progressed",
   "main": "index.js",
   "scripts": {
