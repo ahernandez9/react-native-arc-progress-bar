@@ -199,7 +199,7 @@ class ArcProgressBar extends Component {
                             {...{d: c, strokeWidth}}
                         />
                         <Path
-                            stroke={'lightGrey'}
+                            stroke={'#878787'}
                             fill="none"
                             strokeDasharray={`${circumference}, ${circumference}`}
                             {...{d: ad, strokeWidth}}
@@ -284,7 +284,7 @@ const styles = StyleSheet.create({
         width: '75%'
     },
     limitText: {
-        color: 'lightGrey'
+        color: '#878787'
     },
     advancedAvailableView: {
         flexDirection: 'column',

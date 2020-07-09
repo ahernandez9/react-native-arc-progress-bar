@@ -19,7 +19,7 @@ Behaviour is consistent in both Android and iOS.
 ## Installation
 
 ```bash
-npm install --save react-native-arc-progress-bar
+npm install --save react-native-arc-progress-bar react-native-svg
 ```
 
 ## Usage
