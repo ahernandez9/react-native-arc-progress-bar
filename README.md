@@ -25,42 +25,51 @@ npm install --save react-native-arc-progress-bar react-native-svg
 ## Usage
 
 ```javascript
-import React, { Component } from 'react';
-import { ArcProgressBar } from 'react-native-arc-progress-bar';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import ArcProgressBar, { resolveNewValue } from 'react-native-arc-progress-bar';
 
-class Example extends Component {
+const Example = () => {
+    const [state, setState] = useState(250);
 
-    state = {
-        changingValue: 0
-    };
-
-    render() {
-        const { changingValue } = this.state;
-    
-        return (
-          <ArcProgressBar
-            rectangularSize={500}
-            lowerValue={50}
-            stackedValue={changingValue}
-            higherValue={550}
-            maxValue={1200}
-            showCursor
-            onChange={this._onChange}
-          />
-        );
+    const [scrollableMax, absoluteMax] = [800, 2000];
+    const onChange = ([alpha, beta]) => {
+        setState(resolveNewValue(alpha, beta, absoluteMax, scrollableMax));
     }
 
-    _onChange = (newValue) => {
-        this.setState({changingValue: newValue})
-    }
-}
+    return (
+        <>
+        <View style={{flex: 1}}>
+            <ArcProgressBar
+                rectangularSize={250}
+                lowerValue={100}
+                stackedValue={state}
+                maxValue={scrollableMax}
+                absoluteMaxValue={absoluteMax}
+                showCursor
+                showMinMax
+                minStyle={{textAlign: "center"}}
+                maxStyle={{textAlign: "center"}}
+                caption1Text={"MAX\n"}
+                caption2Text={"\nMIN"}
+                showMin
+                showMax
+                onChange={onChange}
+            />
+        </View>
+        <View style={{flex: 1}} />
+        </>
+    );
+};
+
+export default Example;
 ```
             
 ## Properties
 
  name              | description                                   | type     | default
 :----------------- |:--------------------------------------------- | --------:|:------------------
- rectangularSize   | Size of the component                         |   Number | -
+ rectangularSize*   | Size of the component                         |   Number | -
  strokeWidth       | Width of the bar                              |   Number | -
  containerStyle    | Styles for container view                     |   Object | -
  progressStyle     | Styles for arc bar view                       |   Object | -
@@ -75,10 +84,10 @@ class Example extends Component {
  showCursor        | Show animated cursor (if false, no onChange function should be added                          |   Boolean | True
  showMax           | Show max caption                              |   Boolean | False
  showMin           | Show min caption                              |   Boolean | False
- absoluteMaxValue  | Max value of the whole bar                    |   Number  | -
- lowerValue        | Lower value of the animated bar               |   Number | -
- stackedValue      | Current value of the animated bar             |   Number | -
- maxValue          | Max possible value of the animated bar                              |   Boolean | -
+ absoluteMaxValue* | Max value of the whole bar                    |   Number  | -
+ lowerValue*       | Lower value of the animated bar               |   Number | -
+ stackedValue*     | Current value of the animated bar             |   Number | -
+ maxValue          | Max possible value of the animated bar        |   Number | -
  maxText           | Text for inner upper caption                  |   String | -
  minText           | Text for inner lower caption                  |   String | -
  primaryColor      | Color for animated bar                        |   Hex color | #047FF9

@@ -94,3 +94,15 @@ export const getLargeArcValue = (end, start, isAdvanced, angle) => {
     }
     return end - start > -1 * PI ? '0' : '1'
 };
+export const resolveNewValue = (alpha, beta, absoluteMax, scrollableMax) => {
+    const delta = calculateDelta(beta, alpha);
+    const deltaPer = fromRadToPer(delta);
+    let value = fromPerToVal(deltaPer, absoluteMax);
+
+    if (value <= 0) {
+        value = 0;
+    } else if (value >= scrollableMax) {
+        value = scrollableMax
+    }
+    return value;
+}

@@ -1,3 +1,2 @@
-import {ArcProgressBar} from './ArcProgressBar'
-
-export default ArcProgressBar
+export { ArcProgressBar as default } from './ArcProgressBar';
+export { resolveNewValue } from './utils';
